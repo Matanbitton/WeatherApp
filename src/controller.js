@@ -1,8 +1,15 @@
 import weather from "./api.js";
 import "./style.css";
 
-console.log(
-  weather("Eilat").then((resolve) => {
-    console.log(resolve);
-  })
-);
+const userWeatherInput = document.querySelector("#user-weather-input");
+const submitButton = document.querySelector("#submit");
+
+submitButton.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  weather(userWeatherInput.value).then((resolve) => {
+    if (resolve) {
+      console.log(resolve);
+    }
+  });
+});
