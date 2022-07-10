@@ -1,5 +1,5 @@
 import weather from "./api.js";
-import "style.css";
+import "./style.css";
 
 console.log(
   weather("Eilat").then((resolve) => {
