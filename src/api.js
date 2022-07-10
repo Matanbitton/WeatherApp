@@ -6,6 +6,8 @@ export default async function weather(cityName) {
     { mode: "cors" }
   );
   const weatherData = await response.json();
+
+  console.log(weatherData);
   const getTemp = () => {
     const temperature = weatherData.main.temp;
     return temperature;
@@ -30,6 +32,11 @@ export default async function weather(cityName) {
     const windSpeed = weatherData.wind.speed;
     return windSpeed;
   };
+
+  const getFeelsLike = () => {
+    const feelsLike = weatherData.main.feels_like;
+    return feelsLike;
+  };
   const getWeatherDescription = () => {
     const weatherDescription = weatherData.weather[0].description;
     return weatherDescription;
@@ -40,8 +47,9 @@ export default async function weather(cityName) {
   const minTemp = getMinTemp();
   const humidity = getHumidity();
   const pressure = getPressure();
-  const weatherDescription = getWeatherDescription();
   const windSpeed = getWindSpeed();
+  const feelsLike = getFeelsLike();
+  const weatherDescription = getWeatherDescription();
 
   const weatherObj = {
     temp,
@@ -49,8 +57,9 @@ export default async function weather(cityName) {
     minTemp,
     humidity,
     pressure,
-    weatherDescription,
     windSpeed,
+    feelsLike,
+    weatherDescription,
   };
   return weatherObj;
 }
