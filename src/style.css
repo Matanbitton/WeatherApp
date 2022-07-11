@@ -59,9 +59,11 @@ h3 {
 .description {
   font-size: 14px;
   padding: 5px;
+  align-self: center;
+  text-align: center;
 }
 .fa-cloud {
-  font-size: 50px;
+  font-size: 100px;
 }
 
 #weather {
