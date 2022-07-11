@@ -6,24 +6,22 @@ export default async function currWeather(cityName) {
   const weatherData = await loadWeatherJson(url).catch(alert);
   console.log(weatherData);
   if (weatherData) {
-    const temp = weatherData.main.temp;
-    const maxTemp = weatherData.main.temp_max;
-    const minTemp = weatherData.main.temp_min;
+    const name = weatherData.name;
+    const temp = Math.round(weatherData.main.temp);
+    const maxTemp = Math.round(weatherData.main.temp_max);
+    const minTemp = Math.round(weatherData.main.temp_min);
     const humidity = weatherData.main.humidity;
-    const pressure = weatherData.main.pressure;
-    const windSpeed = weatherData.wind.speed;
-    const feelsLike = weatherData.main.feels_like;
-    const weatherDescription = weatherData.weather[0].description;
+    const feelsLike = Math.round(weatherData.main.feels_like);
+    const description = weatherData.weather[0].description;
 
     const weatherObj = {
+      name,
       temp,
       maxTemp,
       minTemp,
       humidity,
-      pressure,
-      windSpeed,
       feelsLike,
-      weatherDescription,
+      description,
     };
 
     return weatherObj;
@@ -40,7 +38,6 @@ export async function hourlyWeather(cityName) {
   });
   console.log(weatherData);
 }
-hourlyWeather("Tel Aviv");
 
 export async function loadWeatherJson(url) {
   const response = await fetch(url, { mode: "cors" });
