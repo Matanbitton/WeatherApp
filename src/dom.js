@@ -12,9 +12,9 @@ export default function createWeatherComponent(weatherObj) {
   cityNameHTML.innerHTML += ` <i class="fa-solid fa-map-location-dot"></i>`;
 
   descriptionHTML.innerText = titleCase(weather.description);
-  feelsLikeHTML.innerText = `Feels Like: ${weather.feelsLike}`;
-  tempHTML.innerText = `${weather.temp}`;
-  highLowTempHTML.innerText = `H: ${weather.maxTemp} / L: ${weather.minTemp}`;
+  feelsLikeHTML.innerText = `Feels Like: ${weather.feelsLike}°c`;
+  tempHTML.innerText = `${weather.temp}°c`;
+  highLowTempHTML.innerText = `H: ${weather.maxTemp}°c / L: ${weather.minTemp}°c`;
   humidityHTML.innerHTML = `Humidity: ${weather.humidity}%`;
 
   return htmlSkeleton;

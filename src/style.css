@@ -34,7 +34,12 @@ body {
   width: 400px;
 }
 .art {
-  display: inline;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 2px solid white;
+  padding-left: 50px;
+  padding-right: 20px;
 }
 .weather-component > h1,
 h4,
@@ -42,15 +47,19 @@ h3 {
   padding: 0;
   margin: 0;
 }
+.weather-data {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .degrees {
-  font-size: 40px;
-  padding: 10px;
+  font-size: 60px;
   margin: 0;
 }
 .city-name {
   width: auto;
   display: flex;
-  justify-content: center;
+  justify-content: start;
 
   flex-direction: row-reverse;
   gap: 10px;
@@ -62,7 +71,7 @@ h3 {
   align-self: center;
   text-align: center;
 }
-.fa-cloud {
+.fa-cloud-sun {
   font-size: 100px;
 }
 
@@ -77,6 +86,9 @@ h3 {
     #c850c0 46%,
     #ffcc70 100%
   );
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 #weather > input,
 button {
@@ -84,4 +96,5 @@ button {
   padding: 10px;
   font-size: 16px;
   border: none;
+  background-color: white;
 }
