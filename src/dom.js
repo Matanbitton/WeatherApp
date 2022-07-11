@@ -13,7 +13,7 @@ export default function createWeatherComponent(weatherObj) {
   cityNameHTML.innerText = weather.name;
   descriptionHTML.innerText = weather.description;
   feelsLikeHTML.innerText = weather.feelsLike;
-  tempHTML.innerText = weather.temp;
+  tempHTML.innerText = `${weather.temp}`;
   highTempHTML.innerText = `H: ${weather.maxTemp} `;
   lowTempHTML.innerText = `L: ${weather.minTemp} `;
   humidityHTML.innerHTML = `humidity: ${weather.humidity}%`;
