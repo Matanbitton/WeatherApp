@@ -6,33 +6,45 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Document</title>
     <script defer="defer" src="bundle.js"></script>
+    <script
+      src="https://kit.fontawesome.com/24dbff3e7e.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <form id="weather">
-      <label for="user-weather-input">Enter City: </label>
-      <input type="text" id="user-weather-input" />
-      <button id="submit" type="submit">Submit</button>
-    </form>
     <div class="container">
+      <form id="weather">
+        <label for="user-weather-input">Enter City: </label>
+        <input type="text" id="user-weather-input" />
+        <button id="submit" type="submit">Submit</button>
+      </form>
       <div class="weather-component">
-        <h2 class="city-name"></h2>
-        <h1 class="degrees"></h1>
-        <h4 class="feels-like"></h4>
-        <h4 class="description"></h4>
-        <h4 class="humidity"></h4>
+        <div class="art">
+          <i class="fa-solid fa-cloud"></i>
 
-        <h4 class="high-temp"></h4>
-        <h4 class="low-temp"></h4>
+          <h4 class="description"></h4>
+        </div>
+        <div class="weather-data">
+          <h3 class="city-name"></h3>
+          <h1 class="degrees">
+            <i class="fa-solid fa-temperature-high"></i>
+          </h1>
+          <h4 class="feels-like"></h4>
+
+          <h4 class="humidity"></h4>
+
+          <h4 class="high-low-temp"></h4>
+        </div>
       </div>
-      <div class="weather-forecast">
-        <div class="sunday"></div>
-        <div class="monday"></div>
-        <div class="tuesday"></div>
-        <div class="wednesday"></div>
-        <div class="thursday"></div>
-        <div class="friday"></div>
-        <div class="saturday"></div>
-      </div>
+    </div>
+    <div class="weather-forecast">
+      <div class="sunday"></div>
+      <div class="monday"></div>
+      <div class="tuesday"></div>
+      <div class="wednesday"></div>
+      <div class="thursday"></div>
+      <div class="friday"></div>
+      <div class="saturday"></div>
     </div>
   </body>
 </html>
