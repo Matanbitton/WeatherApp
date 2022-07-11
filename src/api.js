@@ -1,9 +1,10 @@
 const API_KEY = "fda162adce857de507b0fa9fb36a4afb";
 
-export default async function weather(cityName) {
+export default async function currWeather(cityName) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${API_KEY}&units=metric`;
 
   const weatherData = await loadWeatherJson(url).catch(alert);
+  console.log(weatherData);
   if (weatherData) {
     const temp = weatherData.main.temp;
     const maxTemp = weatherData.main.temp_max;
@@ -28,6 +29,18 @@ export default async function weather(cityName) {
     return weatherObj;
   }
 }
+
+export async function hourlyWeather(cityName) {
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric`;
+
+  const weatherData = await loadWeatherJson(url).catch(alert);
+  const hoursForecastList = weatherData.list;
+  hoursForecastList.forEach((item) => {
+    console.log(`Time: ${item.dt_txt} Degrees: ${Math.round(item.main.temp)} `);
+  });
+  console.log(weatherData);
+}
+hourlyWeather("Tel Aviv");
 
 export async function loadWeatherJson(url) {
   const response = await fetch(url, { mode: "cors" });
