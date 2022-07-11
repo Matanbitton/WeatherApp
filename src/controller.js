@@ -4,6 +4,7 @@ import "./style.css";
 
 const userWeatherInput = document.querySelector("#user-weather-input");
 const submitButton = document.querySelector("#submit");
+const weatherComponent = document.querySelector(".weather-component");
 const body = document.body;
 
 submitButton.addEventListener("click", (e) => {
@@ -14,7 +15,11 @@ submitButton.addEventListener("click", (e) => {
       console.log(resolve);
       const htmlElement = createWeatherComponent(resolve);
       console.log(htmlElement);
-      body.append(htmlElement);
+      weatherComponent = htmlElement;
     }
   });
+});
+
+currWeather("Tel Aviv").then((resolve) => {
+  createWeatherComponent(resolve);
 });

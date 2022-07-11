@@ -1,0 +1,85 @@
+body {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #001f47;
+
+  display: flex;
+  justify-content: center;
+}
+.container {
+  gap: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+.weather-component {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+
+  border-radius: 1em;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 15px;
+  width: 400px;
+}
+.art {
+  display: inline;
+}
+.weather-component > h1,
+h4,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+.degrees {
+  font-size: 40px;
+  padding: 10px;
+  margin: 0;
+}
+.city-name {
+  width: auto;
+  display: flex;
+  justify-content: center;
+
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.description {
+  font-size: 14px;
+  padding: 5px;
+}
+.fa-cloud {
+  font-size: 50px;
+}
+
+#weather {
+  width: 400px;
+  padding: 15px;
+  border-radius: 1em;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+#weather > input,
+button {
+  border-radius: 1em;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+}

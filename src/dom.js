@@ -1,22 +1,29 @@
 export default function createWeatherComponent(weatherObj) {
   const weather = weatherObj;
-  console.log(weather);
   const htmlSkeleton = document.querySelector(".weather-component");
   const cityNameHTML = htmlSkeleton.querySelector(".city-name");
   const tempHTML = htmlSkeleton.querySelector(".degrees");
   const feelsLikeHTML = htmlSkeleton.querySelector(".feels-like");
-  const descriptionHTML = htmlSkeleton.querySelector(".description");
-  const highTempHTML = htmlSkeleton.querySelector(".high-temp");
-  const lowTempHTML = htmlSkeleton.querySelector(".low-temp");
+  const descriptionHTML = document.querySelector(".description");
+  const highLowTempHTML = htmlSkeleton.querySelector(".high-low-temp");
   const humidityHTML = htmlSkeleton.querySelector(".humidity");
 
   cityNameHTML.innerText = weather.name;
-  descriptionHTML.innerText = weather.description;
-  feelsLikeHTML.innerText = weather.feelsLike;
+  cityNameHTML.innerHTML += ` <i class="fa-solid fa-map-location-dot"></i>`;
+
+  descriptionHTML.innerText = titleCase(weather.description);
+  feelsLikeHTML.innerText = `Feels Like: ${weather.feelsLike}`;
   tempHTML.innerText = `${weather.temp}`;
-  highTempHTML.innerText = `H: ${weather.maxTemp} `;
-  lowTempHTML.innerText = `L: ${weather.minTemp} `;
-  humidityHTML.innerHTML = `humidity: ${weather.humidity}%`;
+  highLowTempHTML.innerText = `H: ${weather.maxTemp} / L: ${weather.minTemp}`;
+  humidityHTML.innerHTML = `Humidity: ${weather.humidity}%`;
 
   return htmlSkeleton;
+}
+
+function titleCase(str) {
+  str = str.toLowerCase().split(" ");
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+  return str.join(" ");
 }
