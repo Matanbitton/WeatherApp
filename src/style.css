@@ -4,7 +4,7 @@ body {
   box-sizing: border-box;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #001f47;
+  background-color: #021c3d;
 
   display: flex;
   justify-content: center;
@@ -192,4 +192,88 @@ button {
   font-size: 16px;
   border: none;
   background-color: white;
+}
+
+.weather-forecast {
+  display: grid;
+
+  gap: 10px;
+  width: 400px;
+  padding: 35px;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: auto;
+  height: 250px;
+}
+.container-forecast {
+  display: flex;
+  border-radius: 1em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
+  padding: 10px;
+  font-size: 20px;
+  gap: 10px;
+  height: 50px;
+}
+
+::-webkit-scrollbar {
+  border-radius: 1em;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  background-color: rgb(0, 0, 0);
+  border-radius: 2em;
+}
+
+.date-forecast,
+.temp-forecast {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container-one {
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+  border-radius: 1em;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+.container-one > div > .fa-sun {
+  font-size: 20px;
+  animation: none;
+}
+
+.fa-moon {
+  font-size: 20px;
+}
+
+@keyframes moon {
+  0% {
+    color: rgb(141, 141, 141);
+  }
+  50% {
+    color: rgb(40, 62, 75);
+  }
+  100% {
+    color: rgb(141, 141, 141);
+  }
 }
