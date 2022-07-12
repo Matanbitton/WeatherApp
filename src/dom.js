@@ -4,7 +4,7 @@ const partlyCloudy = `<i class="fa-solid fa-cloud-sun"></i>`;
 const rain = `<i class="fa-solid fa-cloud-showers-heavy"></i>`;
 const snow = '<i class="fa-solid fa-snowflake"></i>';
 
-export default function createWeatherComponent(weatherObj) {
+export function createWeatherComponent(weatherObj) {
   const weather = weatherObj;
   const htmlSkeleton = document.querySelector(".weather-component");
   const cityNameHTML = htmlSkeleton.querySelector(".city-name");
@@ -27,6 +27,28 @@ export default function createWeatherComponent(weatherObj) {
   humidityHTML.innerHTML = `Humidity: ${weather.humidity}%`;
 
   return htmlSkeleton;
+}
+
+export function createWeatherForecastComponent(weatherArr) {
+  const weatherForecast = document.querySelector(".weather-forecast");
+  weatherForecast.innerHTML = "";
+  weatherArr.forEach((item) => {
+    const container = document.createElement("div");
+    container.className = "container-forecast";
+
+    const date = document.createElement("div");
+    date.className = "date-forecast";
+    date.innerText = item.date;
+
+    const temp = document.createElement("div");
+    temp.innerText = `${Math.round(item.temp)}°c`;
+    temp.className = "temp-forecast";
+
+    container.append(date, temp);
+
+    weatherForecast.append(container);
+  });
+  return weatherForecast;
 }
 
 function titleCase(str) {
@@ -56,6 +78,10 @@ function setIconBasedOnWeather(descriptionHTML) {
   }
   if (descriptionHTML.innerText.includes("Rain")) {
     div.innerHTML = rain;
+    descriptionHTML.prepend(div);
+  }
+  if (descriptionHTML.innerText.includes("Snow")) {
+    div.innerHTML = snow;
     descriptionHTML.prepend(div);
   }
 }
