@@ -2,6 +2,7 @@ const sun = `<i class="fa-regular fa-sun"></i>`;
 const cloud = `<i class="fa-solid fa-cloud"></i>`;
 const partlyCloudy = `<i class="fa-solid fa-cloud-sun"></i>`;
 const rain = `<i class="fa-solid fa-cloud-showers-heavy"></i>`;
+const snow = '<i class="fa-solid fa-snowflake"></i>';
 
 export default function createWeatherComponent(weatherObj) {
   const weather = weatherObj;

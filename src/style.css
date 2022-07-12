@@ -35,6 +35,10 @@ body {
   width: 400px;
   height: 170px;
 }
+.fa-snowflake {
+  font-size: 100px;
+  color: #ccefff;
+}
 .fa-cloud-showers-heavy {
   font-size: 100px;
   animation: myAnim 2s ease 0s infinite normal forwards;
