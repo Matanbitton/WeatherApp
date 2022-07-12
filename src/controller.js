@@ -4,7 +4,7 @@ import "./style.css";
 
 const userWeatherInput = document.querySelector("#user-weather-input");
 const submitButton = document.querySelector("#submit");
-const weatherComponent = document.querySelector(".weather-component");
+let weatherComponent = document.querySelector(".weather-component");
 const body = document.body;
 
 submitButton.addEventListener("click", (e) => {
