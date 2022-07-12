@@ -29,17 +29,55 @@ body {
   color: white;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  gap: 20px;
   padding: 15px;
   width: 400px;
+  height: 170px;
 }
+.fa-cloud-showers-heavy {
+  font-size: 100px;
+  animation: myAnim 2s ease 0s infinite normal forwards;
+}
+@keyframes myAnim {
+  0% {
+    transform: scale3d(1, 1, 1);
+    color: white;
+  }
+
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+    color: rgb(206, 232, 245);
+  }
+
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+    color: white;
+  }
+}
+
 .art {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-left: 2px solid white;
   padding-left: 50px;
-  padding-right: 20px;
+  border-left: 2px solid white;
 }
 .weather-component > h1,
 h4,
@@ -66,13 +104,66 @@ h3 {
 }
 
 .description {
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
   padding: 5px;
+  padding-top: 15px;
   align-self: center;
   text-align: center;
+  width: 120px;
 }
+
 .fa-cloud-sun {
   font-size: 100px;
+  animation: cloud-sun 3s 0s infinite;
+}
+@keyframes cloud-sun {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.fa-cloud {
+  font-size: 100px;
+  animation: cloud 3s 0s ease-in-out infinite;
+}
+@keyframes cloud {
+  0% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+.fa-sun {
+  font-size: 100px;
+  animation: sun 3s 0s ease-in-out infinite;
+}
+
+@keyframes sun {
+  0% {
+    color: white;
+    transform: rotate(0);
+  }
+  50% {
+    color: #fae2b7;
+  }
+  100% {
+    transform: rotate(360deg);
+    color: white;
+  }
 }
 
 #weather {
