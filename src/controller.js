@@ -1,25 +1,35 @@
-import currWeather from "./api.js";
-import createWeatherComponent from "./dom";
+import { currWeather, hourlyWeather } from "./api.js";
+import { createWeatherComponent, createWeatherForecastComponent } from "./dom";
 import "./style.css";
 
 const userWeatherInput = document.querySelector("#user-weather-input");
 const submitButton = document.querySelector("#submit");
 let weatherComponent = document.querySelector(".weather-component");
-const body = document.body;
+let weatherForecast = document.querySelector(".weather-forecast");
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
 
   currWeather(userWeatherInput.value).then((resolve) => {
     if (resolve) {
-      console.log(resolve);
       const htmlElement = createWeatherComponent(resolve);
-      console.log(htmlElement);
       weatherComponent = htmlElement;
+    }
+  });
+  hourlyWeather(userWeatherInput.value).then((resolve) => {
+    if (resolve) {
+      let hourlyWeatherElement = createWeatherForecastComponent(resolve);
+      weatherForecast = hourlyWeatherElement;
+      console.log(hourlyWeatherElement);
     }
   });
 });
 
 currWeather("Tel Aviv").then((resolve) => {
   createWeatherComponent(resolve);
+});
+
+hourlyWeather("Tel Aviv").then((resolve) => {
+  const hourlyWeatherElement = createWeatherForecastComponent(resolve);
+  weatherForecast = hourlyWeatherElement;
 });
