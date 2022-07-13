@@ -22,7 +22,7 @@ I Pursued this project with the hopes of learning about asynchronous javascript 
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> <img src="https://img.icons8.com/color/48/000000/javascript.png"/> </a> 
     <a href="https://www.w3.org/html/" target="_blank"> <img src="https://img.icons8.com/color/48/000000/html-5.png"/> </a> 
     <a href="https://www.w3schools.com/css/" target="_blank"> <img src="https://img.icons8.com/color/48/000000/css3.png"/> </a> 
-   <a href="https://webpack.js.org/" > <img src="https://webpack.js.org/icon-pwa-512x512.d3dae4189855b3a72ff9.png" style = "width: 20px"> </a>
+   <a href="https://webpack.js.org/" > <img src="https://webpack.js.org/icon-pwa-512x512.d3dae4189855b3a72ff9.png" style = "width: 30px"> </a>
 </p>
 
 ## What I learned:
