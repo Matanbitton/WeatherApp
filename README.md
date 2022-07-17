@@ -48,7 +48,7 @@ ok I assign this variable to be the result of this function, but I don't know wh
 
 - discovering that async and await are the best things since sliced bread.
 
-- Working with API's can be really fun also there are a triliion of them online for free!
+- Working with API's can be really fun also there are a triliion of them online for free that you can build cool stuff with!
 
 ## Connect with me:
 
