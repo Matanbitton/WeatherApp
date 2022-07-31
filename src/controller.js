@@ -4,8 +4,6 @@ import "./style.css";
 
 const userWeatherInput = document.querySelector("#user-weather-input");
 const submitButton = document.querySelector("#submit");
-let weatherComponent = document.querySelector(".weather-component");
-let weatherForecast = document.querySelector(".weather-forecast");
 
 submitButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -20,7 +18,6 @@ submitButton.addEventListener("click", (e) => {
     if (resolve) {
       let hourlyWeatherElement = createWeatherForecastComponent(resolve);
       weatherForecast = hourlyWeatherElement;
-      console.log(hourlyWeatherElement);
     }
   });
 });
