@@ -29,7 +29,7 @@ export async function currWeather(cityName) {
 
 export async function hourlyWeather(cityName) {
   const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${API_KEY}&units=metric`;
-  const weatherData = await loadWeatherJson(url).catch(alert);
+  const weatherData = await loadWeatherJson(url);
   const hoursForecastList = weatherData.list;
   const weatherArr = [];
   hoursForecastList.forEach((item) => {
