@@ -276,3 +276,7 @@ button {
     color: rgb(141, 141, 141);
   }
 }
+
+#submit:hover {
+  cursor: pointer;
+}
